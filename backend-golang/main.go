@@ -33,6 +33,12 @@ func main() {
 			log.Fatal("Error loading .env file:", err)
 		}
 	}
+  // Used in production
+//	if os.Getenv("ENV") != "production" {
+	 //				if err := godotenv.Load(".env"); err != nil {
+		//					log.Println(".env file not found, using environment variables")
+			//		 }
+			// }
 
 	MONGODB_URI := os.Getenv("MONGODB_URI")
 	clientOptions := options.Client().ApplyURI(MONGODB_URI)
